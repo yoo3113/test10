@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 공통 스타일 */
+h2{ 
+	padding: 16px;
+	text-align: left;
+}
+ul{padding-left: 0}
+ul li{list-style: none; margin: 10px;}
+a{text-decoration: none;}
+table thead{background: #eee;}
+.error{color: #f00; margin: 10px;}
+textarea{resize: none;}
