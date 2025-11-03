@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>유효성 검사</title>
+</head>
+<body>
+	<form th:action="@{/valid01}" method="post"
+			th:object="${product}">
+		<div th:if="${#fields.hasAnyErrors()}">
+			<div th:each="err : ${#fields.allError()}"
+				th:text="${err}"></div>
+		</div>
+		<p>이메일 <input type="text" name="email" th:value="${email}">
+		</p>
+			
+		<p>비밀번호 <input type="password" name="password" th:value="${password}">
+		</p>
+		
+		<p>이름 <input type="text" name="name" th:value="${name}">
+		</p>
+		<p>
+			<input type="submit" value="가입">
+			<input type="reset" value="취소">
+		</p>
+	</form>
+</body>
+</html>
