@@ -1,16 +1,17 @@
 package com.test.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.Data;
 
-@ToString
-@Getter
-@Setter
+@Data
 public class MemberDTO {
 
-	private long id; //번호
-	private String email;//이메일
-	private String passwd;//비밀번호
-	private String name;//이름
+	@NotEmpty(message = "올바른 형식의 이메일 주소여야 합니다.")
+	private String email;
+	
+	@NotEmpty(message = "비밀번호는 필수 항목입니다.")
+	private String password;
+	
+	@NotEmpty(message = "이름은 필수 항목입니다.")
+	private String name;
 }
